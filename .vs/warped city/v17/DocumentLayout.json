@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "D:\\unity projects\\warped city\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\passmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\passmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\enimyshoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enimyshoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\cameramovmernt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramovmernt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\scene_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scene_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\passmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\passmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\cameramovmernt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramovmernt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\laddermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laddermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +38,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyBullet.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyBullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBullet.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyBullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyBullet.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T21:46:01.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "enimyShoot.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\enimyShoot.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\enimyShoot.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwBkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T21:24:27.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LadderMovement.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LadderMovement.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LadderMovement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T12:29:08.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PassMenu.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\PassMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PassMenu.cs",
@@ -42,55 +88,41 @@
               "RelativeToolTip": "Assets\\Scripts\\PassMenu.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAcwCYAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T21:59:34.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T21:59:34.153Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwBcAAAAqAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-17T21:30:07.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "CameraMovmernt.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\CameraMovmernt.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraMovmernt.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\CameraMovmernt.cs",
               "RelativeToolTip": "Assets\\Scripts\\CameraMovmernt.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-17T19:44:07.586Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-17T19:44:07.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Scene_manager.cs",
-              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\Scene_manager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Scene_manager.cs",
-              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\Scene_manager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Scene_manager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T18:29:10.175Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Player_Movment.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\Player_Movment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movment.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\Player_Movment.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Movment.cs",
-              "ViewState": "AQIAAGgAAAAAAAAAAAAIwAsAAAAeAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-15T16:06:43.155Z"
             }

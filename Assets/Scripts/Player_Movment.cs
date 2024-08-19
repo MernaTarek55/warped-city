@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
@@ -9,9 +8,13 @@ public class Player_Movement : MonoBehaviour
     public float jumpForce = 5f;
     public LayerMask groundLayer;
     public LayerMask ladderLayer;
-    public Transform firePoint;
+    public Transform idleFirePoint;
+    public Transform runFirePoint;
+    public Transform crouchFirePoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
+    public Vector2 crouchColliderSize = new Vector2(1f, 0.5f);
+    public Vector2 standingColliderSize = new Vector2(1f, 2f);
 
     private float moveInput;
     private bool isRunning;
@@ -19,17 +22,16 @@ public class Player_Movement : MonoBehaviour
     private bool isClimbing;
     private bool isJumping;
     private bool isHurt;
+    private bool isCrouching;
 
     private Rigidbody2D rb;
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -39,61 +41,68 @@ public class Player_Movement : MonoBehaviour
         isRunning = Input.GetKey(KeyCode.LeftShift);
         isGrounded = IsGrounded();
         isJumping = Input.GetKeyDown(KeyCode.Space) && isGrounded;
+        isCrouching = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
 
-        if (moveInput != 0)
+        if (moveInput != 0 && !isCrouching)
         {
-            spriteRenderer.flipX = moveInput < 0;
+            if (moveInput > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0); 
+            }
+            else if (moveInput < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
 
-        // Handle movement animations
-        if (moveInput == 0 && !isClimbing && !isHurt)
+        if (isCrouching && isGrounded && !isHurt)
         {
-            animator.SetBool("Walk", false);
+            animator.SetTrigger("isCrouch");
+            boxCollider.size = crouchColliderSize;
+            moveInput = 0; 
+        }
+        else
+        {
+            animator.ResetTrigger("isCrouch");
+            boxCollider.size = standingColliderSize;
+        }
+
+        if (moveInput == 0 && !isCrouching)
+        {
+            animator.SetInteger("Speed", 0);
         }
         else if (!isHurt)
         {
             if (isRunning)
             {
-                animator.Play("Run");
+                animator.SetInteger("Speed", 2);
             }
             else
             {
-                animator.SetBool("Walk", true);
+                animator.SetInteger("Speed", 1);
             }
         }
 
-        // Handle jump animation
-        if (isJumping && !isHurt)
+        if (isJumping && !isHurt && !isClimbing && !isCrouching)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            animator.SetTrigger("Jump");
+            //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.AddForce(new (0, jumpForce));
+            animator.SetTrigger("isJump");
         }
 
-        // Handle ladder climbing
-        if (Input.GetAxisRaw("Vertical") != 0 && IsTouchingLadder() && !isHurt)
-        {
-            isClimbing = true;
-            rb.gravityScale = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, Input.GetAxisRaw("Vertical") * walkSpeed);
-            animator.SetBool("Climb", true);
-        }
-        else if (!IsTouchingLadder() || moveInput != 0)
-        {
-            isClimbing = false;
-            rb.gravityScale = 1f;
-            animator.SetBool("Climb", false);
-        }
-
-        // Handle shooting
         if (Input.GetKeyDown(KeyCode.Z) && !isHurt)
         {
             Shoot();
+        }
+        else
+        {
+            animator.SetBool("isShooting", false);
         }
     }
 
     void FixedUpdate()
     {
-        if (!isClimbing && !isHurt)
+        if (!isClimbing && !isHurt && !isCrouching)
         {
             float speed = isRunning ? runSpeed : walkSpeed;
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -106,17 +115,40 @@ public class Player_Movement : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    private bool IsTouchingLadder()
+    private void OnDrawGizmos()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.up, 0.1f, ladderLayer);
-        return raycastHit.collider != null;
+        if (boxCollider != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(boxCollider.bounds.center, boxCollider.bounds.size);
+        }
     }
 
     private void Shoot()
     {
+        Transform firePoint = GetFirePoint();
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        bulletRb.velocity = new Vector2(bulletSpeed * (spriteRenderer.flipX ? -1 : 1), 0);
+
+        float direction = transform.rotation.eulerAngles.y == 180 ? -1 : 1;
+        bulletRb.velocity = new Vector2(bulletSpeed * direction, 0);
+        animator.SetBool("isShooting", true);
+    }
+
+    private Transform GetFirePoint()
+    {
+        if (isCrouching)
+        {
+            return crouchFirePoint;
+        }
+        else if (isRunning)
+        {
+            return runFirePoint;
+        }
+        else
+        {
+            return idleFirePoint;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -130,10 +162,10 @@ public class Player_Movement : MonoBehaviour
     private IEnumerator Hurt()
     {
         isHurt = true;
-        animator.SetTrigger("Hurt");
-        rb.velocity = new Vector2(-moveInput * runSpeed, rb.velocity.y); 
+        animator.SetTrigger("isHurt");
+        rb.velocity = new Vector2(-moveInput * runSpeed, rb.velocity.y);
 
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(1f);
         isHurt = false;
     }
 }

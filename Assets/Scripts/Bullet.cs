@@ -1,37 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;         // Speed of the bullet
-    public float lifetime = 2f;       // Lifetime before the bullet is destroyed
-    public int damage = 1;            // Damage the bullet deals to enemies
-
+    public float speed = 10f;
+    public float lifetime = 2f;
+    public int damage = 1;
+    public float destroyDelay = 0.5f;
     private Rigidbody2D rb;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;  
+        rb.velocity = transform.right * speed;
         Destroy(gameObject, lifetime);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the bullet hits an enemy
         if (collision.CompareTag("Enemy"))
         {
-            //Destroy(collision.GameObject);
-            
+            Animator enemyAnimator = collision.gameObject.GetComponent<Animator>();
 
-            // Destroy the bullet after it hits an enemy
-            Destroy(gameObject);
+            if (enemyAnimator != null)
+            {
+                enemyAnimator.Play("die");
+                StartCoroutine(DestroyEnemyAfterDelay(collision.gameObject));
+            }
+            GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if (collision.CompareTag("Ground") || collision.CompareTag("Wall"))
+    }
+
+    private IEnumerator DestroyEnemyAfterDelay(GameObject enemy)
+    {
+        yield return  new WaitForSeconds(destroyDelay);
+        if (enemy != null)
         {
-            // Destroy the bullet if it hits a solid object like the ground or a wall
+            Destroy(enemy);
             Destroy(gameObject);
         }
     }
