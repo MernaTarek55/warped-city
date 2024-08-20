@@ -2,34 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enimyShoot : MonoBehaviour
+public class EnemyShoot : MonoBehaviour
 {
     Animator animator;
-    [SerializeField] Transform fairpos;
+    [SerializeField] Transform firePos;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
+    public float distance;
+    public GameObject player;
+    public float shootDelay = 0.001f; 
+    private bool canShoot = true;
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "player") {
-            Shoot();
-        }
-        else
+        distance = Vector2.Distance(gameObject.transform.position, player.transform.position);
+        if (distance < 7 && canShoot)
         {
-            animator.Play("Egg Turret Idle Animation");
+            StartCoroutine(Shoot());
         }
     }
-    private void Shoot()
+
+    private IEnumerator Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, fairpos.position, fairpos.rotation);
+        animator.Play("Egg Turret Shoot Animation");
+        canShoot = false;
+
+        GameObject bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
         float direction = transform.rotation.eulerAngles.y == 180 ? -1 : 1;
         bulletRb.velocity = new Vector2(bulletSpeed * direction, 0);
-        animator.Play("Egg Turret Shoot Animation");
+
+        
+
+        yield return new WaitForSeconds(shootDelay);
+
+        canShoot = true;
     }
 }

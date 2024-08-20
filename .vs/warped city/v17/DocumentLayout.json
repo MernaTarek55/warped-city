@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\unity projects\\warped city\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\enimyshoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\mangelevels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mangelevels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\enimyshoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enimyshoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player_movment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|d:\\unity projects\\warped city\\assets\\scripts\\enemymovment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymovment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6386AD55-0E86-B298-04CD-B8A60B1B45BB}|Assembly-CSharp.csproj|D:\\unity projects\\warped city\\assets\\scripts\\passmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,49 +46,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "mangeLevels.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\mangeLevels.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\mangeLevels.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\mangeLevels.cs",
+              "RelativeToolTip": "Assets\\Scripts\\mangeLevels.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAxwAwAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T12:37:03.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EnemyMovment.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyMovment.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovment.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyMovment.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyMovment.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA1wCIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T08:21:54.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EnemyBullet.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyBullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBullet.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\EnemyBullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyBullet.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCEAAAAJAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-19T21:46:01.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "enimyShoot.cs",
-              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\enimyShoot.cs",
-              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\enimyShoot.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAwBkAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T21:24:27.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "LadderMovement.cs",
-              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\LadderMovement.cs",
-              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\LadderMovement.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T12:29:08.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PassMenu.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\PassMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PassMenu.cs",
@@ -92,19 +101,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Bullet.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\Bullet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-17T21:30:07.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CameraMovmernt.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\CameraMovmernt.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CameraMovmernt.cs",
@@ -116,15 +125,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Player_Movment.cs",
               "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\Player_Movment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Movment.cs",
               "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\Player_Movment.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player_Movment.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA0AAAAEAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAowFQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T16:06:43.155Z"
+              "WhenOpened": "2024-08-15T16:06:43.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "enimyShoot.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\enimyShoot.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\enimyShoot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\enimyShoot.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBYAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T21:24:27.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LadderMovement.cs",
+              "DocumentMoniker": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LadderMovement.cs",
+              "ToolTip": "D:\\unity projects\\warped city\\Assets\\Scripts\\LadderMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LadderMovement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-19T12:29:08.1Z"
             }
           ]
         }

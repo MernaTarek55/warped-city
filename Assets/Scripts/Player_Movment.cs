@@ -58,13 +58,11 @@ public class Player_Movement : MonoBehaviour
         if (isCrouching && isGrounded && !isHurt)
         {
             animator.SetTrigger("isCrouch");
-            boxCollider.size = crouchColliderSize;
             moveInput = 0; 
         }
         else
         {
             animator.ResetTrigger("isCrouch");
-            boxCollider.size = standingColliderSize;
         }
 
         if (moveInput == 0 && !isCrouching)
@@ -85,7 +83,6 @@ public class Player_Movement : MonoBehaviour
 
         if (isJumping && !isHurt && !isClimbing && !isCrouching)
         {
-            //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             rb.AddForce(new (0, jumpForce));
             animator.SetTrigger("isJump");
         }
@@ -155,6 +152,15 @@ public class Player_Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            
+            StartCoroutine(Hurt());
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+
             StartCoroutine(Hurt());
         }
     }

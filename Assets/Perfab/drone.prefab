@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 2923029900660935100}
   - component: {fileID: 8874953207347128094}
   - component: {fileID: 3936356525781848876}
+  - component: {fileID: 5992188556282013118}
   m_Layer: 0
   m_Name: drone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1670318160676227330
 Transform:
   m_ObjectHideFlags: 0
@@ -170,3 +171,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0145281935, y: -0.025182158}
   m_Size: {x: 0.39309564, y: 0.49963567}
   m_Direction: 0
+--- !u!114 &5992188556282013118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30530727856288515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabd56eb3b0da224882445cbc8f1987a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  moveSpeed: 2
