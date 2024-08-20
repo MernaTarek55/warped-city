@@ -16,10 +16,18 @@ public class mangeLevels : MonoBehaviour
 
     IEnumerator HandleCollision(GameObject player)
     {
+        //player.GetComponent<Player_Movement>().enabled = false;
+        player.GetComponent<Animator>().enabled = false;
         player.GetComponent<Rigidbody2D>().isKinematic = true;
-        Animator animator = player.GetComponent<Animator>();
-        animator.SetTrigger("isOnHole");
-        yield return new WaitForSeconds(2f);
+        player.GetComponent<Rigidbody2D>().velocity = new(0, 0);
+        player.transform.position = new(98.6f, 25, 0);
+        for (int i = 0; i < 600; i++)
+        {
+            player.transform.Rotate(0, 0, 0.6f);
+            player.transform.localScale /= 1.001f;
+            yield return new WaitForSeconds(0.003f);
+        }
+
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextSceneIndex);
     }

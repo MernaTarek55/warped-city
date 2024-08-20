@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class boyPlayerMovment : MonoBehaviour
 {
-    public float walkSpeed = 2f;
     public float runSpeed = 4f;
-    public float jumpForce = 5f;
+    public float jumpForce = 50f;
     public LayerMask groundLayer;
     public LayerMask ladderLayer;
     public Transform idleFirePoint;
@@ -37,14 +35,14 @@ public class boyPlayerMovment : MonoBehaviour
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        isRunning = Input.GetKey(KeyCode.LeftShift);
+        moveInput = Input.GetAxis("Horizontal");
+        isRunning = moveInput != 0;
         isGrounded = IsGrounded();
         isJumping = Input.GetKeyDown(KeyCode.Space) && isGrounded;
         isCrouching = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
 
         // Handle rotation and movement input
-        if (!isCrouching && !isHurt)
+        if (!isHurt)
         {
             if (moveInput > 0)
             {
@@ -55,12 +53,11 @@ public class boyPlayerMovment : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
 
-            animator.SetInteger("Speed", isRunning ? 2 : 1);
         }
-        else if (isCrouching)
+        if (isCrouching)
         {
             moveInput = 0; // Prevent movement while crouching
-            animator.SetTrigger("isCrouch");
+            animator.SetTrigger("Duck");
 
             // Handle crouch shooting
             if (Input.GetKeyDown(KeyCode.Z))
@@ -72,30 +69,35 @@ public class boyPlayerMovment : MonoBehaviour
         if (isJumping && !isHurt && !isClimbing && !isCrouching)
         {
             rb.AddForce(new Vector2(0, jumpForce));
-            animator.SetTrigger("isJumping");
+            animator.SetTrigger("Jump");
         }
 
         // Trigger the fall animation when falling back to the ground
         if (!isGrounded && rb.velocity.y < 0)
         {
-            animator.SetTrigger("isFall");
+            animator.SetBool("Falling", true);
         }
-
+        else animator.SetBool("Falling", false);
         if (Input.GetKeyDown(KeyCode.Z) && !isHurt && !isRunning && !isClimbing && !isCrouching)
         {
             Shoot(idleFirePoint);
         }
-        else if (!isCrouching)
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            animator.SetBool("isShooting", false);
+            animator.SetBool("Shooting", true);
         }
+        else
+        {
+            animator.SetBool("Shooting", false);
+        }
+        animator.SetBool("Running", isRunning);
     }
 
     void FixedUpdate()
     {
-        if (!isClimbing && !isHurt)
+        if (!isClimbing && !isHurt && isRunning)
         {
-            float speed = isRunning ? runSpeed : walkSpeed;
+            float speed = runSpeed;
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         }
     }
@@ -139,6 +141,7 @@ public class boyPlayerMovment : MonoBehaviour
         {
             StartCoroutine(Hurt());
         }
+        isGrounded = true;
     }
 
     private IEnumerator Hurt()

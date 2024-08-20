@@ -7,6 +7,7 @@ public class PlayerSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     public int playerNumber;
     public static int selectedPlayer;
+    public static int selectedMod;
     [HideInInspector] public bool isSelected;
     Image myImage;
     float alphaValue;
@@ -15,6 +16,7 @@ public class PlayerSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         myImage = GetComponent<Image>();
         selectedPlayer = -1;
+        selectedMod = -1;
         increase = true;
         alphaValue = 0;
         var tempColor = myImage.color;
@@ -25,7 +27,7 @@ public class PlayerSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         isSelected = true;
-        if (selectedPlayer != playerNumber)
+        if (selectedPlayer != playerNumber && selectedMod != playerNumber)
         {
             StartCoroutine(nameof(AnimateBackground));
         }
@@ -34,7 +36,7 @@ public class PlayerSelector : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerExit(PointerEventData eventData)
     {
         isSelected = false;
-        if (selectedPlayer != playerNumber)
+        if (selectedPlayer != playerNumber && selectedMod != playerNumber)
         {
             alphaValue = 0;
             increase = true;

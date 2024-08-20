@@ -37,23 +37,12 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift);
         isGrounded = IsGrounded();
         isJumping = Input.GetKeyDown(KeyCode.Space) && isGrounded;
         isCrouching = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
 
-        if (moveInput != 0 && !isCrouching)
-        {
-            if (moveInput > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0); 
-            }
-            else if (moveInput < 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-        }
+        
 
         if (isCrouching && isGrounded && !isHurt)
         {
@@ -65,21 +54,8 @@ public class Player_Movement : MonoBehaviour
             animator.ResetTrigger("isCrouch");
         }
 
-        if (moveInput == 0 && !isCrouching)
-        {
-            animator.SetInteger("Speed", 0);
-        }
-        else if (!isHurt)
-        {
-            if (isRunning)
-            {
-                animator.SetInteger("Speed", 2);
-            }
-            else
-            {
-                animator.SetInteger("Speed", 1);
-            }
-        }
+        
+        
 
         if (isJumping && !isHurt && !isClimbing && !isCrouching)
         {
@@ -99,6 +75,37 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        moveInput = Input.GetAxis("Horizontal");
+        if (moveInput == 0 && !isCrouching)
+        {
+            animator.SetInteger("Speed", 0);
+        }
+        else if (!isHurt)
+        {
+            if (isRunning)
+            {
+                animator.SetInteger("Speed", 2);
+            }
+            else
+            {
+                animator.SetInteger("Speed", 1);
+            }
+        }
+
+        
+
+        if (moveInput != 0)
+        {
+            if (moveInput > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (moveInput < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
+
         if (!isClimbing && !isHurt && !isCrouching)
         {
             float speed = isRunning ? runSpeed : walkSpeed;
