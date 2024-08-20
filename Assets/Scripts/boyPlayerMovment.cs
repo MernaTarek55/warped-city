@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : MonoBehaviour
+public class boyPlayerMovment : MonoBehaviour
 {
     public float walkSpeed = 2f;
     public float runSpeed = 4f;
@@ -9,7 +10,6 @@ public class Player_Movement : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask ladderLayer;
     public Transform idleFirePoint;
-    public Transform runFirePoint;
     public Transform crouchFirePoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
@@ -43,55 +43,49 @@ public class Player_Movement : MonoBehaviour
         isJumping = Input.GetKeyDown(KeyCode.Space) && isGrounded;
         isCrouching = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S);
 
-        if (moveInput != 0 && !isCrouching)
+        // Handle rotation and movement input
+        if (!isCrouching && !isHurt)
         {
             if (moveInput > 0)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0); 
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             else if (moveInput < 0)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
-        }
 
-        if (isCrouching && isGrounded && !isHurt)
+            animator.SetInteger("Speed", isRunning ? 2 : 1);
+        }
+        else if (isCrouching)
         {
+            moveInput = 0; // Prevent movement while crouching
             animator.SetTrigger("isCrouch");
-            moveInput = 0; 
-        }
-        else
-        {
-            animator.ResetTrigger("isCrouch");
-        }
 
-        if (moveInput == 0 && !isCrouching)
-        {
-            animator.SetInteger("Speed", 0);
-        }
-        else if (!isHurt)
-        {
-            if (isRunning)
+            // Handle crouch shooting
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                animator.SetInteger("Speed", 2);
-            }
-            else
-            {
-                animator.SetInteger("Speed", 1);
+                Shoot(crouchFirePoint);
             }
         }
 
         if (isJumping && !isHurt && !isClimbing && !isCrouching)
         {
-            rb.AddForce(new (0, jumpForce));
-            animator.SetTrigger("isJump");
+            rb.AddForce(new Vector2(0, jumpForce));
+            animator.SetTrigger("isJumping");
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && !isHurt)
+        // Trigger the fall animation when falling back to the ground
+        if (!isGrounded && rb.velocity.y < 0)
         {
-            Shoot();
+            animator.SetTrigger("isFall");
         }
-        else
+
+        if (Input.GetKeyDown(KeyCode.Z) && !isHurt && !isRunning && !isClimbing && !isCrouching)
+        {
+            Shoot(idleFirePoint);
+        }
+        else if (!isCrouching)
         {
             animator.SetBool("isShooting", false);
         }
@@ -99,7 +93,7 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isClimbing && !isHurt && !isCrouching)
+        if (!isClimbing && !isHurt)
         {
             float speed = isRunning ? runSpeed : walkSpeed;
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -121,9 +115,8 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    private void Shoot(Transform firePoint)
     {
-        Transform firePoint = GetFirePoint();
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
@@ -132,35 +125,18 @@ public class Player_Movement : MonoBehaviour
         animator.SetBool("isShooting", true);
     }
 
-    private Transform GetFirePoint()
-    {
-        if (isCrouching)
-        {
-            return crouchFirePoint;
-        }
-        else if (isRunning)
-        {
-            return runFirePoint;
-        }
-        else
-        {
-            return idleFirePoint;
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
             StartCoroutine(Hurt());
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-
             StartCoroutine(Hurt());
         }
     }
@@ -168,14 +144,13 @@ public class Player_Movement : MonoBehaviour
     private IEnumerator Hurt()
     {
         isHurt = true;
-        animator.SetTrigger("isHurt");
         rb.velocity = new Vector2(-moveInput * runSpeed, rb.velocity.y);
-        PlayerHealth.health --;
+        PlayerHealth.health--;
         if (PlayerHealth.health <= 0)
         {
             PlayerHealth.health = 0;
-            yield return new WaitForSeconds(1f); 
-            gameObject.SetActive(false); 
+            yield return new WaitForSeconds(1f);
+            gameObject.SetActive(false);
         }
         else
         {
