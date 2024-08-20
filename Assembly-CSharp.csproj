@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{408CF11D-8D21-C18A-392F-AAAB5C996DF1}</ProjectGuid>
+    <ProjectGuid>{6386AD55-0E86-B298-04CD-B8A60B1B45BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,7 +64,9 @@
     <Compile Include="Assets\Scripts\CameraMovmernt.cs" />
     <Compile Include="Assets\Scripts\enimyShoot.cs" />
     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovment.cs" />
     <Compile Include="Assets\New\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\mangeLevels.cs" />
     <Compile Include="Assets\Scripts\Scene_manager.cs" />
     <Compile Include="Assets\Scripts\PassMenu.cs" />
     <Compile Include="Assets\Scripts\Player_Movment.cs" />

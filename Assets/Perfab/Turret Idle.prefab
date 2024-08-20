@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf9a96ebc7358f43823b9728d16d5a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fairpos: {fileID: 4170633373581284903}
+  firePos: {fileID: 4170633373581284903}
   bulletPrefab: {fileID: 9086028309472147214, guid: b498bcebc4d728e4489ba3965feb04bd, type: 3}
   bulletSpeed: 10
+  distance: 7
+  player: {fileID: 0}
+  shootDelay: 0.001
