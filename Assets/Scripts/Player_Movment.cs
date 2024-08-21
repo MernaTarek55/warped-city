@@ -23,11 +23,15 @@ public class Player_Movement : MonoBehaviour
     private bool isJumping;
     private bool isHurt;
     private bool isCrouching;
-
+    AudioManager audioManager;
     private Rigidbody2D rb;
     private Animator animator;
     private BoxCollider2D boxCollider;
-
+    public GameOverScreen gameOverScreen;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -130,6 +134,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Shoot()
     {
+        audioManager.PlaySFX(audioManager.shoot);
         Transform firePoint = GetFirePoint();
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
@@ -175,14 +180,18 @@ public class Player_Movement : MonoBehaviour
     private IEnumerator Hurt()
     {
         isHurt = true;
+        audioManager.PlaySFX(audioManager.girlhurt);
         animator.SetTrigger("isHurt");
         rb.velocity = new Vector2(-moveInput * runSpeed, rb.velocity.y);
         PlayerHealth.health --;
         if (PlayerHealth.health <= 0)
         {
+            audioManager.PlaySFX(audioManager.GameOver);
             PlayerHealth.health = 0;
-            yield return new WaitForSeconds(1f); 
-            gameObject.SetActive(false); 
+            yield return new WaitForSeconds(1f);
+            gameOverScreen.ShowGameOver();
+            gameObject.SetActive(false);
+            
         }
         else
         {

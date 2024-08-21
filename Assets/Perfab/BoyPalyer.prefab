@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &439880888011797762
+--- !u!1 &3263635305073287712
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6218416034349489730}
+  - component: {fileID: 7673139099163493355}
   m_Layer: 0
   m_Name: 'crouchShootPos '
   m_TagString: Untagged
@@ -16,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6218416034349489730
+--- !u!4 &7673139099163493355
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439880888011797762}
+  m_GameObject: {fileID: 3263635305073287712}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.233, y: 0.07, z: 0}
+  m_LocalPosition: {x: 0.201, y: -0.103, z: 0}
   m_LocalScale: {x: 1.3342851, y: 1.3342851, z: 1.3342851}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 8575536671732412558}
+  m_Father: {fileID: 1979990270390560980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1004734142206669256
+--- !u!1 &3621383324027238102
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,43 +39,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8575536671732412558}
-  - component: {fileID: 8485094994520851120}
-  - component: {fileID: 2209509948946875680}
-  - component: {fileID: 6785692644196821076}
-  - component: {fileID: 7297988830349304984}
-  - component: {fileID: 5696687084244576714}
+  - component: {fileID: 1979990270390560980}
+  - component: {fileID: 3081131340742786857}
+  - component: {fileID: 8560544060934877746}
+  - component: {fileID: 424686885470134106}
+  - component: {fileID: 8840517804190573215}
+  - component: {fileID: 3917864788251691226}
+  - component: {fileID: 7010925377117542032}
   m_Layer: 0
   m_Name: BoyPalyer
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8575536671732412558
+  m_IsActive: 0
+--- !u!4 &1979990270390560980
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.811, y: -3.003, z: 0}
-  m_LocalScale: {x: 4.5710483, y: 4.5710483, z: 4.5710483}
+  m_LocalPosition: {x: -6.98, y: -1.81, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 4.2074213}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5272257771170433164}
-  - {fileID: 6218416034349489730}
+  - {fileID: 4273148793230884736}
+  - {fileID: 7673139099163493355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8485094994520851120
+--- !u!212 &3081131340742786857
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -121,13 +122,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2209509948946875680
+--- !u!70 &8560544060934877746
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -156,13 +157,13 @@ CapsuleCollider2D:
   m_Offset: {x: -0.021973621, y: -0.11661974}
   m_Size: {x: 0.17154661, y: 0.56676}
   m_Direction: 0
---- !u!61 &6785692644196821076
+--- !u!61 &424686885470134106
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -201,14 +202,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1974917, y: 0.03421566}
   m_EdgeRadius: 0
---- !u!50 &7297988830349304984
+--- !u!50 &8840517804190573215
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -216,7 +217,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -228,34 +229,54 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5696687084244576714
+--- !u!114 &3917864788251691226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004734142206669256}
+  m_GameObject: {fileID: 3621383324027238102}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c255ec39da02e254fb611d443f6935da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
-  runSpeed: 4
-  jumpForce: 5
+  runSpeed: 8
+  jumpForce: 1500
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   ladderLayer:
     serializedVersion: 2
     m_Bits: 64
-  idleFirePoint: {fileID: 5272257771170433164}
-  crouchFirePoint: {fileID: 6218416034349489730}
+  idleFirePoint: {fileID: 4273148793230884736}
+  crouchFirePoint: {fileID: 7673139099163493355}
   bulletPrefab: {fileID: 2000534768498444015, guid: fb1922cb91a9e5642a8e3eb4bfa27caf, type: 3}
   bulletSpeed: 10
   crouchColliderSize: {x: 1, y: 0.5}
   standingColliderSize: {x: 1, y: 2}
---- !u!1 &3858939378189344975
+--- !u!95 &7010925377117542032
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3621383324027238102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f9c0c2ee600cf84ab5915278e9e47ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7433133746309712356
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,7 +284,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5272257771170433164}
+  - component: {fileID: 4273148793230884736}
   m_Layer: 0
   m_Name: idelShootPos
   m_TagString: Untagged
@@ -271,18 +292,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5272257771170433164
+--- !u!4 &4273148793230884736
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3858939378189344975}
+  m_GameObject: {fileID: 7433133746309712356}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.318, y: 0.027, z: 0}
   m_LocalScale: {x: 1.3342851, y: 1.3342851, z: 1.3342851}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8575536671732412558}
+  m_Father: {fileID: 1979990270390560980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

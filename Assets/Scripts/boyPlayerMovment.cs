@@ -25,7 +25,12 @@ public class boyPlayerMovment : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private BoxCollider2D boxCollider;
-
+    public GameOverScreen gameOverScreen;
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -119,6 +124,7 @@ public class boyPlayerMovment : MonoBehaviour
 
     private void Shoot(Transform firePoint)
     {
+        audioManager.PlaySFX(audioManager.shoot);
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
@@ -147,13 +153,16 @@ public class boyPlayerMovment : MonoBehaviour
     private IEnumerator Hurt()
     {
         isHurt = true;
+        audioManager.PlaySFX(audioManager.boyhurt);
         rb.velocity = new Vector2(-moveInput * runSpeed, rb.velocity.y);
         PlayerHealth.health--;
         if (PlayerHealth.health <= 0)
         {
+            audioManager.PlaySFX(audioManager.GameOver);
             PlayerHealth.health = 0;
             yield return new WaitForSeconds(1f);
             gameObject.SetActive(false);
+            gameOverScreen.ShowGameOver();
         }
         else
         {

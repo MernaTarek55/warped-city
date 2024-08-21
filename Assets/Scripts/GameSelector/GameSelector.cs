@@ -61,7 +61,7 @@ public class GameSelector : MonoBehaviour
             }
             if (PlayerSelector.selectedMod == 3)
             {
-                sceneName = "enviroment2";
+                sceneName = "Level1.2";
             }
             if (PlayerSelector.selectedMod != -1 && PlayerSelector.selectedPlayer != -1) StartBtn.SetActive(true);
         }

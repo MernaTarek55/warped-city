@@ -8,8 +8,11 @@ public class Bullet : MonoBehaviour
     public int damage = 1;
     public float destroyDelay = 0.5f;
     private Rigidbody2D rb;
-    
-
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,10 +24,12 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            
             Animator enemyAnimator = collision.gameObject.GetComponent<Animator>();
 
             if (enemyAnimator != null)
             {
+                audioManager.PlaySFX(audioManager.enimydamage);
                 enemyAnimator.Play("die");
                 StartCoroutine(DestroyEnemyAfterDelay(collision.gameObject));
             }
